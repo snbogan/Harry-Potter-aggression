@@ -18,4 +18,16 @@ hp_data <- read_csv("harry_potter_aggression_full.csv")
 
 ```
 
+##2. Basic wrangling of HP aggression rates between different characters
+
+```{r}
+hp_graph <- hp_data %>%
+  filter(Name == "Harry" | Name == "Draco Malfoy") %>%
+  select(Name, book, agg.per.mention) %>%
+  ggplot(aes(x= book, y = agg.per.mention)) +
+  geom_col(aes(fill = Name), position = "dodge") +
+  theme_classic()
+
+hp_graph
+```
 
