@@ -26,8 +26,10 @@ hp_graph <- hp_data %>%
   select(Name, book, agg.per.mention) %>%
   ggplot(aes(x= book, y = agg.per.mention)) +
   geom_col(aes(fill = Name), position = "dodge") +
-  theme_classic()
+  coord_flip() +
+  theme_bw()
 
 hp_graph
 ```
 
+"This is my completely unique sentence"
